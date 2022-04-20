@@ -3,7 +3,8 @@ public class Test {
     public static void main(String[] args) {
         int[] data = {40, 55, 12, 500, 300, 29, 46, 88, 79, 92, 30, 56, 1000, 49};
         print(data);
-        selectionSort(data);
+        // selectionSort(data);
+        insertionSort(data);
         print(data);
     }
 
@@ -23,6 +24,17 @@ public class Test {
                     arr[i] = temp;
                 }
             }
+        }
+    }
+
+    public static void insertionSort(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int insertingItem = arr[i];
+            int  j;
+            for (j = i - 1; j >= 0 && arr[j] > insertingItem; --j) {
+                arr[j + 1] = arr[j];
+            }
+            arr[j + 1] = insertingItem;
         }
     }
     
