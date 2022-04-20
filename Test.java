@@ -1,7 +1,32 @@
-import javax.swing.event.ListSelectionEvent;
 
 public class Test {
     public static void main(String[] args) {
+        int[] data = {40, 55, 12, 500, 300, 29, 46, 88, 79, 92, 30, 56, 1000, 49};
+        print(data);
+        selectionSort(data);
+        print(data);
+    }
+
+    public static void print(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    public static void selectionSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; ++i) {
+            for (int j = i + 1; j < arr.length; ++j) {
+                if (arr[i] > arr[j]) {
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+    }
+    
+    public static void TestDLL() {
         DLL list = new  DLL();
         list.addToHead(new Node(20));
         list.addToHead(new Node(30));
