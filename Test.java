@@ -7,14 +7,7 @@ public class Test {
         insertionSort(data);
         print(data);
     }
-
-    public static void print(int[] arr) {
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-    }
-
+    
     public static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; ++i) {
             for (int j = i + 1; j < arr.length; ++j) {
@@ -38,6 +31,13 @@ public class Test {
         }
     }
     
+    public static void print(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
     public static void TestDLL() {
         DLL list = new  DLL();
         list.addToHead(new Node(20));
