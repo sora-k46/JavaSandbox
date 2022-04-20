@@ -4,7 +4,9 @@ public class Test {
         int[] data = {40, 55, 12, 500, 300, 29, 46, 88, 79, 92, 30, 56, 1000, 49};
         print(data);
         // selectionSort(data);
-        insertionSort(data);
+        // insertionSort(data);
+        // bubbleSort(data);
+        bubbleSortZ(data);
         print(data);
     }
     
@@ -28,6 +30,31 @@ public class Test {
                 arr[j + 1] = arr[j];
             }
             arr[j + 1] = insertingItem;
+        }
+    }
+
+    public static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; ++i) {
+            for (int j = 0; j < arr.length - 1 - i; ++j) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    // version CSC209
+    public static void bubbleSortZ(int[] arr) {
+        for (int i = 0; i < arr.length - 1; ++i) {
+            for (int j = arr.length - 1; j > 0; --j) {
+                if (arr[j] < arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
         }
     }
     
