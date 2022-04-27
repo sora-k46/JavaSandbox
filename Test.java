@@ -1,12 +1,12 @@
 
 public class Test {
     public static void main(String[] args) {
-        int[] data = {40, 55, 12, 500, 300, 29, 46, 88, 79, 92, 30, 56, 1000, 49};
+        int[] data = {9999, 40, 55, 12, 500, 300, 29, 46, 88, 79, 92, 30, 56, 1000, 49};
         print(data);
-        // selectionSort(data);
+        selectionSort(data);
         // insertionSort(data);
         // bubbleSort(data);
-        bubbleSortZ(data);
+        // bubbleSortZ(data);
         print(data);
     }
     
