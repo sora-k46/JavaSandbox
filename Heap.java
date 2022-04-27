@@ -25,6 +25,20 @@ public class Heap {
     }
 
     while (idx <= (size / 2) - 1 && (arr[idx] < arr[left] || right > 0 && arr[idx] < arr[right])) {
+      if (right < 0 || arr[left] > arr[right]) {
+        swap(arr, idx, left);
+        idx = left;
+      } else {
+        swap(arr, idx, right);
+        idx = right;
+      }
+
+      left = 2 * idx + 1;
+      right = 2 * idx + 2;
+
+      if (right >= size) {
+        right = -1;
+      }
     }
   }
 
