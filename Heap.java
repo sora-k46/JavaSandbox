@@ -4,7 +4,7 @@ public class Heap {
   }
 
   public static void heapSort(int[] arr) {
-    for (int i = arr.length - 1; i >= 0; i--) {
+    for (int i = arr.length - 1; i > 0; i--) {
       swap(arr, i, 0);
       moveDown(arr, 0, i);
     }
@@ -12,11 +12,13 @@ public class Heap {
 
   public static void heapify(int[] arr) {
     for (int i = (arr.length/2) - 1; i >= 0; i--) {
-      moveDown(arr, i, arr.length - 1);
+      moveDown(arr, i, arr.length);
     }
   }
 
   public static void moveDown(int[] arr, int idx, int size) {
+    int left = 2 * idx + 1;
+    int right = 2 * idx + 2;
   }
 
   public static void swap(int[] arr, int idx1, int idx2) {
