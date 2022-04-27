@@ -4,12 +4,12 @@ public class Heap {
   }
 
   public static void heapSort(int[] arr) {
+    for (int i = (arr.length / 2) - 1; i >= 0; i--) {
+      moveDown(arr, i, arr.length);
+    }
     for (int i = arr.length - 1; i > 0; i--) {
       swap(arr, i, 0);
       moveDown(arr, 0, i);
-    }
-    for (int i = (arr.length / 2) - 1; i >= 0; i--) {
-      moveDown(arr, i, arr.length);
     }
   }
 
