@@ -1,2 +1,2 @@
-public class Heapify {
+public class Heap {
 }
