@@ -22,6 +22,8 @@ public class Heap {
     if (right >= size) {
       right = -1;
     }
+    while (arr[idx] < arr[left] || right > 0 && arr[idx] < arr[right]) {
+    }
   }
 
   public static void swap(int[] arr, int idx1, int idx2) {
