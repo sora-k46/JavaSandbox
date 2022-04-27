@@ -22,7 +22,8 @@ public class Heap {
     if (right >= size) {
       right = -1;
     }
-    while (arr[idx] < arr[left] || right > 0 && arr[idx] < arr[right]) {
+
+    while (idx <= (size / 2) - 1 && (arr[idx] < arr[left] || right > 0 && arr[idx] < arr[right])) {
     }
   }
 
