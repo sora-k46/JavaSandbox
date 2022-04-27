@@ -4,6 +4,25 @@ public class Heap {
   }
 
   public static void heapSort(int[] arr) {
+    for (int i = arr.length - 1; i >= 0; i--) {
+      swap(arr, i, 0);
+      moveDown(arr, 0, i);
+    }
+  }
+
+  public static void heapify(int[] arr) {
+    for (int i = (arr.length/2) - 1; i >= 0; i--) {
+      moveDown(arr, i, arr.length - 1);
+    }
+  }
+
+  public static void moveDown(int[] arr, int idx, int size) {
+  }
+
+  public static void swap(int[] arr, int idx1, int idx2) {
+    int temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
   }
 
   public static void print(int[] arr) {
