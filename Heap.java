@@ -19,6 +19,7 @@ public class Heap {
   public static void moveDown(int[] arr, int idx, int size) {
     int left = 2 * idx + 1;
     int right = 2 * idx + 2;
+
     if (right >= size) {
       right = -1;
     }
