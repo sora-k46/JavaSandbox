@@ -1,8 +1,17 @@
 public class Heap {
   public static void main(String[] args) {
-    int[] data = { 44, 55, 2, 77, 29, 23, 300, 52, 76, 22, 19, 3, 100 };
+    // int[] data = { 44, 55, 2, 77, 29, 23, 300, 52, 76, 22, 19, 3, 100 };
+    // heapSort(data);
+    // print(data);
+    int size = 50;
+    int data[] = new int[size];
+    for (int i = 0; i < size; i++) {
+      data[i] = (int) (Math.random() * 100 + 1);
+    }
     heapSort(data);
-    print(data);
+    if (isSorted(data))
+      print(data);
+
   }
 
   public static void heapSort(int[] arr) {
@@ -52,5 +61,14 @@ public class Heap {
       System.out.print(arr[i] + " ");
     }
     System.out.println();
+  }
+
+  public static boolean isSorted(int[] arr) {
+    for (int i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1])
+        return false;
+    }
+    System.out.println("Sorted:");
+    return true;
   }
 }
