@@ -1,8 +1,17 @@
+
 public class QuickSort {
   public static void main(String[] args) {
-    int[] data = { 69, 200, 44, 1000, 3, 256, 400, 500, 24, 55, 222, 8, 10, 111, 123, 1, 205 };
-    quickSort(data, 0, data.length - 1);
-    print(data);
+    // int[] data = { 69, 200, 44, 1000, 3, 256, 400, 500, 24, 55, 222, 8, 10, 111, 123, 1, 205 };
+    // quickSort(data, 0, data.length - 1);
+    // print(data);
+    int size = 50;
+    int data[] = new int[size];
+    for (int i = 0; i < size; i++) {
+      data[i] = (int) (Math.random() * 100 + 1);
+    }
+    quickSort(data, 0, size - 1);
+    if (isSorted(data))
+      print(data);
   }
 
   public static void quickSort(int[] a, int first, int last) {
@@ -51,6 +60,14 @@ public class QuickSort {
       System.out.print(i + " ");
     }
     System.out.println();
+  }
+
+  public static boolean isSorted(int[] arr) {
+    for (int i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1])
+        return false;
+    }
+    return true;
   }
 
 }
