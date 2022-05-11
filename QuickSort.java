@@ -5,13 +5,22 @@ public class QuickSort {
     // quickSort(data, 0, data.length - 1);
     // print(data);
     int size = 50;
-    int data[] = new int[size];
-    for (int i = 0; i < size; i++) {
-      data[i] = (int) (Math.random() * 100 + 1);
+    for (int i = 0; i < 10; i++) {
+      int data[] = new int[size];
+      for (int j = 0; j < size; j++) {
+        data[j] = (int) (Math.random() * 100 + 1);
+      }
+      test(data);
     }
-    quickSort(data, 0, size - 1);
+  }
+  
+  public static void test(int[] data) {
+    System.out.println("Unsorted:");
+    print(data);
+    quickSort(data, 0, data.length - 1);
     if (isSorted(data))
       print(data);
+    System.out.println();
   }
 
   public static void quickSort(int[] a, int first, int last) {
@@ -26,12 +35,12 @@ public class QuickSort {
     while (lower <= upper) {
       
       // Search for big number (greater than pivot)
-      while (a[lower] < a[pivot] && lower < a.length) {
+      while (a[lower] < a[pivot] && lower <= last) {
         lower++;
       }
 
       // Search for small number (less than pivot)
-      while (a[upper] > a[pivot] && upper >= 0) {
+      while (a[upper] >= a[pivot] && upper > first) {
         upper--;
       }
 
@@ -67,6 +76,7 @@ public class QuickSort {
       if (arr[i] > arr[i + 1])
         return false;
     }
+    System.out.println("Sorted:");
     return true;
   }
 
